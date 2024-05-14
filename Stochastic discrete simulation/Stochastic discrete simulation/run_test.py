@@ -1,0 +1,33 @@
+import modules as modules
+import cap as cap
+import event as event
+
+an1=modules.Fox('F',1,0,0,5,6,5,5)
+an2=modules.Rabbit('CM',2,0,0,5,6,5,5)
+an3=modules.Rabbit('CF',3,0,0,5,6,5,5)
+
+cap1=cap.cap()
+ev1=event.event('death',2,an1)
+ev2=event.event('capture',4,an1)
+ev3=event.event('reproduce',7,an3)
+ev4=event.event('move',3,an2)
+print('############################')
+print('Teste Event e CAP\n')
+print('Cap sem eventos')
+print(cap1.showE())
+print('Adicionar eventos')
+cap1.addE(ev1)
+cap1.addE(ev2)
+cap1.addE(ev4)
+print(cap1.showE())
+print('Adicionar evento no meio')
+cap1.addE(ev3)
+print(cap1.showE())
+print('Próximo evento a decorrer')
+print(cap1.nextE().show())
+print('remover um evento que ocorreu')
+cap1.delE()
+print(cap1.showE())
+print('remover um individuo')
+cap1.delEIndiv(an1)
+print(cap1.showE())
